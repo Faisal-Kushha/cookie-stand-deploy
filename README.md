@@ -1,29 +1,29 @@
-# Next.js + Tailwind CSS Example
+## Lab: 37 - React I
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v2.2)](https://blog.tailwindcss.com/tailwindcss-2-2) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+**Feature Tasks and Requirements**
 
-It uses the new [`Just-in-Time Mode`](https://tailwindcss.com/docs/just-in-time-mode) for Tailwind CSS.
+pages/Index.js should…
 
-## Preview
+- [x] Have <Head> component with page title set to Cookie Stand Admin
+- [x] Have a header component that matches spec.
+- [x] Have a <main> component containing <form> and a placeholder component showing JSON string of last created Cookie Stand.
+- [x] Have a <footer> component that matches spec.
+- [x] Style app using TailwindCSS utility classes.
 
-Preview the example live on [StackBlitz](http://stackblitz.com/):
+**Implementation Notes**
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+- [x] npx create-next-app –example with-tailwindcss cookie-stand-admin
 
-## Deploy your own
+**Configuration**
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+- [x] Create cookie-stand-admin repository in Github
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+Use the folder created by create-next-app as the root of your project’s git repository.
 
-## How to use
+**Developer**
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+Faisal Kushha
 
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-# or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
+**Pull Request**
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+https://github.com/Faisal-Kushha/cookie-stand-admin/pull/1
