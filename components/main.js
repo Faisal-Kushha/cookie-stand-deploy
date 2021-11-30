@@ -10,12 +10,13 @@ export default function Main(props) {
   const [data, setData] = React.useState();
   const [allData, setAllData] = React.useState([]);
   const [totaloftotal, settotaloftotal] = React.useState(0);
+  const [totalperday, settotalperday] = React.useState(0);
   const [totalperhour, setTotalperhour] = React.useState([
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
   ]);
   function dataHandler(event) {
     event.preventDefault();
-    props.senumberoflocaton(props.numberoflocaton + 1);
+    props.setnumberoflocaton(props.numberoflocaton + 1);
     const newData = {
       location: event.target.location.value,
       minCustomers: event.target.min.value,
@@ -54,13 +55,12 @@ export default function Main(props) {
       });
       return total;
     }
-
-    let TotalofTotals = totaloftotal + total_per_day(data.hourly_sales);
+    totalperday = total_per_day(data.hourly_sales);
+    let TotalofTotals = totaloftotal + totalperday;
 
     settotaloftotal(TotalofTotals);
-
     setAllData([...allData, data]);
-
+    settotalperday(totalperday);
     setData(newData);
   }
   return (
@@ -70,6 +70,7 @@ export default function Main(props) {
       <ReportTable
         // data={data}
         allData={allData}
+        totalperday={totalperday}
         working_time={working_time}
         totalperhour={totalperhour}
         totaloftotal={totaloftotal}
