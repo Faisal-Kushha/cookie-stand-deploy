@@ -1,5 +1,5 @@
 import { useAuth } from "../contexts/auth";
-import React, { useState } from "react";
+import { useState } from "react";
 
 export default function LoginForm() {
   const { login } = useAuth();
@@ -13,45 +13,43 @@ export default function LoginForm() {
     };
     setUser(newUser);
   }
-
   return (
-    <div>
-      <div className="w-2/3 h-56 mx-auto my-10 bg-green-300 rounded-lg ">
-        <form onSubmit={loginHandler}>
-          <div className="flex flex-col items-center justify-center">
-            <label>User name</label>
-            <br />
-            <input
-              type="text"
-              name="username"
-              id="username"
-              className="flex-grow w-10/12 bg-gray-200 rounded-sm"
-            />
-          </div>
-
-          <div className="flex flex-col items-center justify-center">
-            <label>Password</label>
-            <br />
-            <input
-              type="password"
-              name="password"
-              id="password"
-              className="flex-grow w-10/12 mt-2 bg-gray-200 rounded-sm"
-            />
-          </div>
-          <br />
-          <div className="flex-grow w-10/12 mx-auto my-1 font-semibold bg-green-500 rounded ">
-            <button
-              className="h-12 text-xl "
-              onClick={() => {
-                login("Faisal", "123");
-              }}
-            >
-              Sign in{" "}
-            </button>
-          </div>
-        </form>
+    <form
+      className="flex flex-col w-1/2 gap-4 p-8 mx-auto my-4 text-center bg-green-200 border-2 border-green-400 rounded-lg text-md"
+      onSubmit={loginHandler}
+    >
+      <div className="flex flex-col items-center justify-center">
+        <label className="mb-2 font-bold uppercase text-grey-darkest">
+          User Name
+        </label>
+        <input
+          className="px-3 py-2 border text-grey-darkest w-10/12"
+          type="text"
+          name="username"
+          id="username"
+        />
       </div>
-    </div>
+
+      <div className="flex flex-col items-center justify-center">
+        <label className="mb-2 font-bold uppercase text-grey-darkest">
+          Password
+        </label>
+        <input
+          className="px-3 py-2 border text-grey-darkest w-10/12"
+          type="password"
+          name="password"
+          id="password"
+        />
+      </div>
+
+      <button
+        className="px-3 py-4 mt-8 uppercase bg-green-500 rounded text-green hover:bg-green-600 text-gray-50 "
+        onClick={() => {
+          login("Faisal", "123");
+        }}
+      >
+        Sign In
+      </button>
+    </form>
   );
 }
