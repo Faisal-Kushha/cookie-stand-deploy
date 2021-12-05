@@ -1,17 +1,14 @@
 import { useAuth } from "../contexts/auth";
-import { useState } from "react";
 
 export default function LoginForm() {
   const { login } = useAuth();
-  const [username, setUser] = useState({});
-
   function loginHandler(event) {
     event.preventDefault();
     const newUser = {
       user: event.target.username.value,
       password: event.target.password.value,
     };
-    setUser(newUser);
+    login(newUser.user, newUser.password);
   }
   return (
     <form
@@ -27,6 +24,7 @@ export default function LoginForm() {
           type="text"
           name="username"
           id="username"
+          required
         />
       </div>
 
@@ -39,14 +37,13 @@ export default function LoginForm() {
           type="password"
           name="password"
           id="password"
+          required
         />
       </div>
 
       <button
         className="px-3 py-4 mt-8 uppercase bg-green-500 rounded text-green hover:bg-green-600 text-gray-50 "
-        onClick={() => {
-          login("Faisal", "123");
-        }}
+        type="submit"
       >
         Sign In
       </button>
