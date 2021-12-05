@@ -2,6 +2,7 @@ import useResource from "../hooks/useResource";
 
 export default function ReportTable(props) {
   const { deleteResource, resources, loading } = useResource();
+
   if (loading) {
     return <p>Loading</p>;
   } else if (resources.length == 0) {

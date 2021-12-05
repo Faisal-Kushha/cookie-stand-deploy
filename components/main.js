@@ -66,9 +66,8 @@ export default function Main(props) {
     let TotalofTotals = totaloftotal + totalperday;
 
     settotaloftotal(TotalofTotals);
-    setAllData([...allData, data]);
+    setAllData([...allData, newData]);
     settotalperday(totalperday);
-    setData(newData);
   }
 
   return (
