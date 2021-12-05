@@ -2,8 +2,6 @@ import useResource from "../hooks/useResource";
 
 export default function ReportTable(props) {
   const { deleteResource, resources, loading } = useResource();
-  // const cost = props.cost;
-  const allData = props.allData;
   if (loading) {
     return <p>Loading</p>;
   } else if (resources.length == 0) {
@@ -27,7 +25,7 @@ export default function ReportTable(props) {
                 key={item.id}
                 className="border border-collapse border-gray-900"
               >
-                <td className="border border-collapse border-gray-900">
+                <td className="border border-collapse border-gray-900 w-40">
                   {item.location}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -61,9 +59,11 @@ export default function ReportTable(props) {
         <tfoot className="bg-green-500 border border-collapse border-gray-900">
           <tr className="border border-collapse border-gray-900">
             <th className="border border-collapse border-gray-900">Totals</th>
-            {props.totalperhour.map((i) => {
+            {props.totalperhour.map((item) => {
               return (
-                <td className="border border-collapse border-gray-900">{i}</td>
+                <td className="border border-collapse border-gray-900">
+                  {item}
+                </td>
               );
             })}
             <td className="border border-collapse border-gray-900">
